@@ -1,171 +1,6 @@
 import random
-from G_V_character import Ork, ParentCharacter
+from G_V_character import  ParentCharacter, Enemy,Hero,Ork,Elf,Ppl,Dwarf,Hobbit,Goblin
 
-# выбор героя
-#ork = 1
-#elf = 2
-#ppl = 3
-
-delta = {'ram':0, 'fight':0,'defense':0}
-hero = {'speed':0,'power':0,'hp':0,'name':0,'defense':0,'luck':0,'damage_hero':0}
-enemy = {'speed':0,'power':0,'hp':0,'name':0,'defense':0,'luck':0,'damage_enemy':0}
-location = {'menu':0,'battle':0,'inventory':0,'profile':0,'shop':0}
-
-#
-
-wood_helmet_name = 'Деревянный шлем'
-wooden_sword_name = 'Деревянный меч'
-
-
-
-#
-
-wood_helmet = {}
-wood_helmet['speed'] = 0
-wood_helmet['power'] = 0
-wood_helmet['defense'] = 10
-wood_helmet['luck'] = 0
-wood_helmet['hp'] = 100
-wood_helmet['name'] = wood_helmet_name
-
-wooden_sword = {}
-wooden_sword['speed'] = 0
-wooden_sword['power'] = 10
-wooden_sword['defense'] = 0
-wooden_sword['luck'] = 0
-wooden_sword['hp'] = 0
-wooden_sword['name'] = wooden_sword_name
-
-
-
-
-#
-
-head_name = '-'
-right_hand_name = '-'
-left_hand_name = '-'
-torso_name = '-'
-trousers_name = '-'
-legs_name = '-'
-accessory_1_name = '-'
-accessory_2_name = '-'
-accessory_3_name = '-'
-
-#
-
-head = {}
-head['speed'] = 0
-head['power'] = 0
-head['defense'] = 0
-head['luck'] = 0
-head['hp'] = 0
-head['name'] = head_name
-head['n'] = 1
-
-right_hand = {}
-right_hand['speed'] = 0
-right_hand['power'] = 0
-right_hand['defense'] = 0
-right_hand['luck'] = 0
-right_hand['hp'] = 0
-right_hand['name'] = right_hand_name
-right_hand['n'] = 1
-
-left_hand = {}
-left_hand['speed'] = 0
-left_hand['power'] = 0
-left_hand['defense'] = 0
-left_hand['luck'] = 0
-left_hand['hp'] = 0
-left_hand['name'] = left_hand_name
-left_hand['n'] = 1
-
-torso = {}
-torso['speed'] = 0
-torso['power'] = 0
-torso['defense'] = 0
-torso['luck'] = 0
-torso['hp'] = 0
-torso['name'] = torso_name
-torso['n'] = 1
-
-trousers = {}
-trousers['speed'] = 0
-trousers['power'] = 0
-trousers['defense'] = 0
-trousers['luck'] = 0
-trousers['hp'] = 0
-trousers['name'] = trousers_name
-trousers['n'] = 1
-
-legs = {}
-legs['speed'] = 0
-legs['power'] = 0
-legs['defense'] = 0
-legs['luck'] = 0
-legs['hp'] = 0
-legs['name'] = legs_name
-legs['n'] = 1
-
-accessory_1 = {}
-accessory_1['speed'] = 0
-accessory_1['power'] = 0
-accessory_1['defense'] = 0
-accessory_1['luck'] = 0
-accessory_1['hp'] = 0
-accessory_1['name'] = accessory_1_name
-accessory_1['n'] = 1
-
-accessory_2 = {}
-accessory_2['speed'] = 0
-accessory_2['power'] = 0
-accessory_2['defense'] = 0
-accessory_2['luck'] = 0
-accessory_2['hp'] = 0
-accessory_2['name'] = accessory_2_name
-accessory_2['n'] = 1
-
-accessory_3 = {}
-accessory_3['speed'] = 0
-accessory_3['power'] = 0
-accessory_3['defense'] = 0
-accessory_3['luck'] = 0
-accessory_3['hp'] = 0
-accessory_3['name'] = accessory_3_name
-accessory_3['n'] = 1
-
-
-# герои и их характеристика
-
-ork_name = 'Орк'
-elf_name = 'Ельф'
-ppl_name = 'Человек'
-
-ork = {}
-ork['speed'] = 30
-ork['power'] = 70
-ork['defense'] = 50
-ork['luck'] = 20
-ork['hp'] = 1000
-ork['name'] = ork_name
-
-elf = {}
-elf['speed'] = 70
-elf['power'] = 40
-elf['defense'] = 55
-elf['luck'] = 40
-elf['hp'] = 1000
-elf['name'] = elf_name
-
-ppl = {}
-ppl['speed'] = 55
-ppl['power'] = 60
-ppl['defense'] = 60
-ppl['luck'] = 35
-ppl['hp'] = 1000
-ppl['name'] = ppl_name
-
-#
 
 def attack_choice_hero():
     while True:
@@ -225,28 +60,34 @@ def ram_choice_hero():
 
 def hero_choice():
     print('Выбери за кого ты будешь драться:')
-    print('1 - Орк')
-    print('2 - Эльф')
-    print('3 - Человек')
+    print('1 - Орк'
+          '2 - Эльф'
+          '3 - Человек'
+          '4 - Гном'
+          '5 - Хоббит'
+          '6 - Гоблин')
     while True:
         choice = int(input('Сделай выбор ? :'))
         if choice == 1:
-            auto_hero = Ork()
+            Hero = Ork
             break
         elif choice == 2:
-            auto_hero = elf
+            Hero = Elf
             break
         elif choice == 3:
-            auto_hero = ppl
+            Hero = Ppl
+            break
+        elif choice == 4:
+            Hero = Dwarf
+            break
+        elif choice == 5:
+            Hero = Hobbit
+            break
+        elif choice == 5:
+            Hero = Goblin
             break
         else:
             print("Ошибка!")
-    # hero['speed'] = auto_hero['speed']
-    # hero['power'] = auto_hero['power']
-    # hero['hp'] = auto_hero['hp'] можно у брать
-    # hero['name'] = auto_hero['name']
-    # hero['defense'] = auto_hero['defense']
-    # hero['luck'] = auto_hero['luck']
     menu_choice()
     return
 
@@ -255,22 +96,25 @@ def hero_choice():
 
 def enemy_choice():
     while True:
-        choice = random.randint(1,3)
+        choice = random.randint(1,6)
         if choice == 1:
-            auto_enemy = ork
+            Enemy = Ork
             break
         elif choice == 2:
-            auto_enemy = elf
+            Enemy = Elf
             break
         elif choice == 3:
-            auto_enemy = ppl
+            Enemy = Ppl
             break
-    enemy['speed'] = auto_enemy['speed']
-    enemy['power'] = auto_enemy['power']
-    enemy['hp'] = auto_enemy['hp']
-    enemy['name'] = auto_enemy['name']
-    enemy['defense'] = auto_enemy['defense']
-    enemy['luck'] = auto_enemy['luck']
+        elif choice == 4:
+            Enemy = Dwarf
+            break
+        elif choice == 5:
+            Enemy = Hobbit
+            break
+        elif choice == 5:
+            Enemy = Goblin
+            break
     return
 
 
@@ -543,8 +387,9 @@ def battle_choice():
 
 
 print('Привет! Как тебя зовут?')
-myName = input()
-print('Рад познакомиться ' + myName)
+MyName = input()
+hero=Hero(MyName_name = MyName)
+print('Рад познакомиться '+MyName)
 print(enemy_choice())
 print(hero_choice())
 
